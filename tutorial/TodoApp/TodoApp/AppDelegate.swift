@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TodoApp
 //
-//  Created by Kotaro Hirayama on 4/3/15.
+//  Created by Kotaro Hirayama on 4/8/15.
 //  Copyright (c) 2015 Kotaro Hirayama. All rights reserved.
 //
 
@@ -13,17 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // TODO: なんかここに追記するっぽい。各funcの役割調べる。
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds) // いらない？
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds) // for no storyboard
         
-        // 本当はここだけ追加？らしいが...
-        self.window!.rootViewController = TodoTableViewController()
+        self.window!.rootViewController = ViewController()
         
-        self.window!.backgroundColor = UIColor.whiteColor() // いらない？
-        self.window!.makeKeyAndVisible() // いらない？
-        
-        // Override point for customization after application launch.
+        self.window?.backgroundColor = UIColor.whiteColor() // for no storyboard
+        self.window?.makeKeyAndVisible() // for no storyboard
+        // General > Deployment Info も空にしないとstoryboardなしだと動かない
         return true
     }
 

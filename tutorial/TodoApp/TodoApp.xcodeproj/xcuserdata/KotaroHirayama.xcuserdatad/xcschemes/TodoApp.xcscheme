@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA4AD0F71ACDFA7A00C211D6"
+               BlueprintIdentifier = "BA04ADCB1AD48D8000471228"
                BuildableName = "TodoApp.app"
                BlueprintName = "TodoApp"
                ReferencedContainer = "container:TodoApp.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA4AD10C1ACDFA7A00C211D6"
+               BlueprintIdentifier = "BA04ADE01AD48D8000471228"
                BuildableName = "TodoAppTests.xctest"
                BlueprintName = "TodoAppTests"
                ReferencedContainer = "container:TodoApp.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA4AD10C1ACDFA7A00C211D6"
+               BlueprintIdentifier = "BA04ADE01AD48D8000471228"
                BuildableName = "TodoAppTests.xctest"
                BlueprintName = "TodoAppTests"
                ReferencedContainer = "container:TodoApp.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BA4AD0F71ACDFA7A00C211D6"
+            BlueprintIdentifier = "BA04ADCB1AD48D8000471228"
             BuildableName = "TodoApp.app"
             BlueprintName = "TodoApp"
             ReferencedContainer = "container:TodoApp.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BA4AD0F71ACDFA7A00C211D6"
+            BlueprintIdentifier = "BA04ADCB1AD48D8000471228"
             BuildableName = "TodoApp.app"
             BlueprintName = "TodoApp"
             ReferencedContainer = "container:TodoApp.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BA4AD0F71ACDFA7A00C211D6"
+            BlueprintIdentifier = "BA04ADCB1AD48D8000471228"
             BuildableName = "TodoApp.app"
             BlueprintName = "TodoApp"
             ReferencedContainer = "container:TodoApp.xcodeproj">

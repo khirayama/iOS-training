@@ -2,7 +2,7 @@
 //  TodoAppTests.swift
 //  TodoAppTests
 //
-//  Created by Kotaro Hirayama on 4/3/15.
+//  Created by Kotaro Hirayama on 4/8/15.
 //  Copyright (c) 2015 Kotaro Hirayama. All rights reserved.
 //
 
