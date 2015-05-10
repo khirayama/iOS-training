@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds) // for no storyboard
         
-        self.window!.rootViewController = ViewController()
+        self.window!.rootViewController = TodoTableViewController()
         
-        self.window?.backgroundColor = UIColor.whiteColor() // for no storyboard
-        self.window?.makeKeyAndVisible() // for no storyboard
+        self.window!.backgroundColor = UIColor.whiteColor() // for no storyboard
+        self.window!.makeKeyAndVisible() // for no storyboard
         // General > Deployment Info も空にしないとstoryboardなしだと動かない
         return true
     }
