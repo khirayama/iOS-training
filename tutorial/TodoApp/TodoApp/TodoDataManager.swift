@@ -16,6 +16,9 @@ class TodoDataManager {
     var size : Int {
         return todoList.count
     }
+    subscript(index: Int) -> TODO { // []でアクセスしたときの振る舞い
+        return todoList[index]
+    }
     
     var todoList: [TODO]
     init() { // 初期化に使われるビルドインメソッド
