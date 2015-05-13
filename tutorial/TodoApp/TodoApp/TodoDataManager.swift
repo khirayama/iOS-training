@@ -40,6 +40,7 @@ class TodoDataManager {
             self.save() // TODO: なにこの関数
             return true
         }
+        return false
     }
     
     func remove(index: Int) -> Bool {
@@ -52,5 +53,7 @@ class TodoDataManager {
         return true
     }
     
-    
+    func save() -> Bool {
+        return true
+    }
 }
