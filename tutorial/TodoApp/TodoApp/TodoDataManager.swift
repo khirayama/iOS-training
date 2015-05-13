@@ -36,9 +36,21 @@ class TodoDataManager {
         }
         
         if TodoDataManager.validate(todo) { // TODO: if文、括弧なしでええん？
-            todoList[index] = todoList
+            todoList[index] = todo
             self.save() // TODO: なにこの関数
             return true
         }
     }
+    
+    func remove(index: Int) -> Bool {
+        if(index >= self.todoList.count) {
+            return false
+        }
+        
+        self.todoList.removeAtIndex(index)
+        self.save()
+        return true
+    }
+    
+    
 }
