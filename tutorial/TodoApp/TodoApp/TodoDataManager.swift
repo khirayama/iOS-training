@@ -13,6 +13,10 @@ struct TODO { // 構造体: クラスをほぼ同等。ただ参照渡しでな�
 }
 
 class TodoDataManager {
+    var size : Int {
+        return todoList.count
+    }
+    
     var todoList: [TODO]
     init() { // 初期化に使われるビルドインメソッド
         self.todoList = []
