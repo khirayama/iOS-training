@@ -19,7 +19,7 @@ class TodoDataManager {
     }
     
     class func validate(todo: TODO!) -> Bool { // TODO: なにこの宣言
-        return todo != nil && todo != "" // TODO: ここのエラーはなんぞ？
+        return todo != nil && todo.title != ""
     }
     
     func create(todo: TODO) -> Bool {
