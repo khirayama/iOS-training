@@ -13,6 +13,26 @@ struct TODO { // 構造体: クラスをほぼ同等。ただ参照渡しでな�
 }
 
 class TodoDataManager {
+    let STORE_KEY = "TodoDataManager.store_key"
+    
+    init() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let data = defaults.objectForKey(self.STORE_KEY) as? [String] {
+            self.todoList = data.map { title in
+                TODO(title: title)
+            }
+        } else {
+            self.todoList = []
+        }
+    }
+    func save() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let data = self.todoList.map { todo in
+            todo.title
+        }
+        defaults.setObject(data, forKey: self.STORE_KEY)
+    }
+    
     var size : Int {
         return todoList.count
     }
@@ -21,15 +41,12 @@ class TodoDataManager {
     }
     
     var todoList: [TODO]
-    init() { // 初期化に使われるビルドインメソッド
-        self.todoList = []
-    }
     
-    class func validate(todo: TODO!) -> Bool { // TODO: なにこの宣言
+    class func validate(todo: TODO!) -> Bool {
         return todo != nil && todo.title != ""
     }
     
-    func create(todo: TODO) -> Bool {
+    func create(todo: TODO!) -> Bool {
         if TodoDataManager.validate(todo) {
             self.todoList += todoList
             return true
@@ -57,10 +74,6 @@ class TodoDataManager {
         
         self.todoList.removeAtIndex(index)
         self.save()
-        return true
-    }
-    
-    func save() -> Bool {
         return true
     }
 }
