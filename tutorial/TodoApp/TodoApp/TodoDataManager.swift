@@ -8,12 +8,29 @@
 
 import Foundation
 
-struct TODO { // 構造体: クラスをほぼ同等。ただ参照渡しでなく値渡し
+struct TODO { // 構造体: クラスとほぼ同等。ただ参照渡しでなく値渡し
     var title : String
 }
 
 class TodoDataManager {
+    
     let STORE_KEY = "TodoDataManager.store_key"
+    
+    class var sharedInstance : TodoDataManager {
+        struct Static {
+            static let instance : TodoDataManager = TodoDataManager()
+        }
+        return Static.instance
+    }
+    
+    var todoList: [TODO]
+    
+    var size : Int {
+        return todoList.count
+    }
+    subscript(index: Int) -> TODO { // []でアクセスしたときの振る舞い
+        return todoList[index]
+    }
     
     init() {
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -25,7 +42,12 @@ class TodoDataManager {
             self.todoList = []
         }
     }
-    func save() {
+    
+    class func validate(todo: TODO!) -> Bool {
+        return todo != nil && todo.title != ""
+    }
+    
+    func save() { // localStorage的なノリのやつぽ
         let defaults = NSUserDefaults.standardUserDefaults()
         let data = self.todoList.map { todo in
             todo.title
@@ -33,22 +55,10 @@ class TodoDataManager {
         defaults.setObject(data, forKey: self.STORE_KEY)
     }
     
-    var size : Int {
-        return todoList.count
-    }
-    subscript(index: Int) -> TODO { // []でアクセスしたときの振る舞い
-        return todoList[index]
-    }
-    
-    var todoList: [TODO]
-    
-    class func validate(todo: TODO!) -> Bool {
-        return todo != nil && todo.title != ""
-    }
-    
     func create(todo: TODO!) -> Bool {
         if TodoDataManager.validate(todo) {
             self.todoList += todoList
+            self.save()
             return true
         }
         return false
@@ -61,7 +71,7 @@ class TodoDataManager {
         
         if TodoDataManager.validate(todo) { // TODO: if文、括弧なしでええん？
             todoList[index] = todo
-            self.save() // TODO: なにこの関数
+            self.save()
             return true
         }
         return false
@@ -74,6 +84,7 @@ class TodoDataManager {
         
         self.todoList.removeAtIndex(index)
         self.save()
+        
         return true
     }
 }

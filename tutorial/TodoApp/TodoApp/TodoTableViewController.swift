@@ -31,7 +31,7 @@ class TodoTableViewController : UIViewController, UITableViewDataSource {
     
     // UITableViewDataSourceのプロトコル
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 3
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
