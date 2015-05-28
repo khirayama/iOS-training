@@ -17,10 +17,17 @@ class TodoTableViewController : UIViewController, UITableViewDataSource {
         
         let header = UIImageView(frame: CGRect(x: 0, y: 0, width: 320, height: 64))
         header.image = UIImage(named: "header")
+        header.userInteractionEnabled = true // addSubViewが動くように
         
         let title = UILabel(frame: CGRect(x: 10, y: 20, width: 310, height: 44))
         title.text = "TODO LIST"
         header.addSubview(title)
+        
+        let button = UIButton.buttonWithType(.System) as! UIButton
+        button.frame = CGRect(x: 320 - 50, y: 20, width: 50, height: 44)
+        button.setTitle("+", forState: .Normal)
+        button.addTarget(self, action:"showCreateView", forControlEvents: .TouchUpInside) // タップされたときに呼び出す関数を指定してる
+        header.addSubview(button)
         
         let screenWidth = UIScreen.mainScreen().bounds.size.height
         self.tableView = UITableView(frame: CGRect(x: 0, y: 60, width: 320, height: screenWidth - 60))
@@ -28,6 +35,12 @@ class TodoTableViewController : UIViewController, UITableViewDataSource {
         
         self.view.addSubview(self.tableView!)
         self.view.addSubview(header)
+    }
+    func showCreateView() {
+        
+        let alert = UIAlertController(title: "add todo", message: nil, preferredStyle: .Alert)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
 // プロトコルはextensionにするといい感じかも
