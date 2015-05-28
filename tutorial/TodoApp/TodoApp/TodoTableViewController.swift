@@ -11,6 +11,7 @@ import UIKit
 class TodoTableViewController : UIViewController, UITableViewDataSource {
     var todo = TodoDataManager.sharedInstance
     var tableView : UITableView?
+    var alert : UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +37,14 @@ class TodoTableViewController : UIViewController, UITableViewDataSource {
         self.view.addSubview(self.tableView!)
         self.view.addSubview(header)
     }
+    // タップされた時に呼び出される
     func showCreateView() {
+        self.alert = UIAlertController(title: "add todo", message: nil, preferredStyle: .Alert)
+        self.alert!.addTextFieldWithConfigurationHandler({ textField in
+            textField.delegate = self
+        })
         
-        let alert = UIAlertController(title: "add todo", message: nil, preferredStyle: .Alert)
-        
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.presentViewController(self.alert!, animated: true, completion: nil)
     }
 }
 // プロトコルはextensionにするといい感じかも
@@ -56,7 +60,23 @@ extension TodoTableViewController : UITableViewDataSource {
         cell.textLabel!.text = self.todo[row].title
         
         return cell
-    }}
+    }
+}
+extension TodoTableViewController : UITextFieldDelegate {
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        
+        let todo = TODO(title: textField.text)
+        if self.todo.create(todo) {
+            textField.text = nil
+            self.tableView!.reloadData()
+        }
+        // TODO: 入力はできてる？けど値が表示されないw
+        // TODO: DEBUGの仕方知りたい！
+        
+        self.alert!.dismissViewControllerAnimated(false, completion: nil)
+        return true
+    }
+}
 
 // 発見 & 調べる
 // !の意味、振る舞い
