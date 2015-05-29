@@ -5,10 +5,9 @@
 //  Created by Kotaro Hirayama on 5/13/15.
 //  Copyright (c) 2015 Kotaro Hirayama. All rights reserved.
 //
+import UIKit
 
-import Foundation
-
-struct TODO { // 構造体: クラスとほぼ同等。ただ参照渡しでなく値渡し
+struct TODO {// 構造体: クラスとほぼ同等。ただ参照渡しでなく値渡し
     var title : String
 }
 
@@ -28,7 +27,8 @@ class TodoDataManager {
     var size : Int {
         return todoList.count
     }
-    subscript(index: Int) -> TODO { // []でアクセスしたときの振る舞い
+    
+    subscript(index: Int) -> TODO {// []でアクセスしたときの振る舞い
         return todoList[index]
     }
     
@@ -44,7 +44,7 @@ class TodoDataManager {
     }
     
     class func validate(todo: TODO!) -> Bool {
-        return todo != nil && todo.title != ""
+        return todo.title != ""
     }
     
     func save() { // localStorage的なノリのやつぽ
@@ -53,11 +53,12 @@ class TodoDataManager {
             todo.title
         }
         defaults.setObject(data, forKey: self.STORE_KEY)
+        defaults.synchronize()
     }
     
     func create(todo: TODO!) -> Bool {
         if TodoDataManager.validate(todo) {
-            self.todoList += todoList
+            self.todoList.append(todo)
             self.save()
             return true
         }
@@ -65,12 +66,12 @@ class TodoDataManager {
     }
     
     func update(todo: TODO!, at index: Int) -> Bool {
-        if(index >= self.todoList.count) {
+        if (index >= self.todoList.count) {
             return false
         }
         
-        if TodoDataManager.validate(todo) { // TODO: if文、括弧なしでええん？
-            todoList[index] = todo
+        if TodoDataManager.validate(todo) {
+            self.todoList[index] = todo
             self.save()
             return true
         }
@@ -78,7 +79,7 @@ class TodoDataManager {
     }
     
     func remove(index: Int) -> Bool {
-        if(index >= self.todoList.count) {
+        if (index >= self.todoList.count) {
             return false
         }
         
