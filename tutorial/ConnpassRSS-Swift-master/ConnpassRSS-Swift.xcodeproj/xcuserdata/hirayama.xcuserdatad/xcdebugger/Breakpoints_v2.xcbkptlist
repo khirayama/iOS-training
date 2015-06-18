@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ConnpassRSS-Swift/Model/EventModel.swift"
+            timestampString = "456105986.63747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "EventModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ConnpassRSS_Swift.EventModel.mapping (ConnpassRSS_Swift.EventModel)(ConnpassRSS_Swift.Map) -&gt; ()"
+                  moduleName = "ConnpassRSS-Swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hirayama/Desktop/ConnpassRSS-Swift-master/ConnpassRSS-Swift/Model/EventModel.swift"
+                  timestampString = "456106383.243852"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "protocol witness for ConnpassRSS_Swift.Mappable.mapping &lt;A : ConnpassRSS_Swift.Mappable&gt;(inout ConnpassRSS_Swift.Mappable.Self)(ConnpassRSS_Swift.Map) -&gt; () in conformance ConnpassRSS_Swift.EventModel : ConnpassRSS_Swift.Mappable in ConnpassRSS_Swift"
+                  moduleName = "ConnpassRSS-Swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hirayama/Desktop/ConnpassRSS-Swift-master/ConnpassRSS-Swift/Model/EventModel.swift"
+                  timestampString = "456106383.2441"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ConnpassRSS-Swift/Model/EventModel.swift"
+            timestampString = "456106022.761112"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "mapping(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ConnpassRSS-Swift/Model/SeriesModel.swift"
+            timestampString = "456106357.567775"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "mapping(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
