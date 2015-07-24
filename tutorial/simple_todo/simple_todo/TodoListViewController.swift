@@ -10,6 +10,10 @@ import UIKit
 
 // TableViewのときはUITableViewDataSource, UITableViewDelegateをプロトコルとして追加
 class TodoListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+
+    let TodoCellHeight: CGFloat = 44
+    let TodoCreateStoryboardName = "TodoCreate"
+    let TodoCreateSegueIdentifier = "TodoCreateVC"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +27,6 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // storyboardからctrl + d&dで追加した
     @IBOutlet var todoTableView: UITableView!
-    
     // セルに表示するテキスト
     let todos = ["TODO0", "TODO1", "TODO2"]
 }
@@ -42,6 +45,21 @@ extension TodoListViewController: UITableViewDataSource {
     }
 }
 
-// TODO:
-// - Delegateないけどええん？
+extension TodoListViewController: UITableViewDelegate {
+    //
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return TodoCellHeight
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let selectTodo = todos[indexPath.row]
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: TodoCreateStoryboardName, bundle: NSBundle.mainBundle())
+        let todoCreateVC = storyboard.instantiateViewControllerWithIdentifier(TodoCreateSegueIdentifier) as! TodoCreateViewController
+        todoCreateVC.todoModel = selectTodo
+        
+        navigationController?.pushViewController(todoCreateVC, animated: true)
+    }
+}
+
 // - @IBOutlet var todoTableView: UITableView!ってd&d以外で追加できるのか
