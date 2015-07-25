@@ -15,42 +15,35 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     let TodoCreateStoryboardName = "TodoCreate"
     let TodoCreateSegueIdentifier = "TodoCreateVC"
     
+    @IBOutlet var todoTableView: UITableView!
+    let todos = ["TODO0", "TODO1", "TODO2"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         todoTableView.delegate = self
         todoTableView.dataSource = self
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    // storyboardからctrl + d&dで追加した
-    @IBOutlet var todoTableView: UITableView!
-    // セルに表示するテキスト
-    let todos = ["TODO0", "TODO1", "TODO2"]
 }
 
 extension TodoListViewController: UITableViewDataSource {
-    // セルの行数
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // cellの行数
         return todos.count
     }
-    // セルの内容反映
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell { // cellの内容反映
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        
         cell.textLabel?.text = todos[indexPath.row]
         return cell
     }
 }
 
 extension TodoListViewController: UITableViewDelegate {
-    //
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return TodoCellHeight
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) { // IndexPath付きで選択されたとき
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let selectTodo = todos[indexPath.row]
         
@@ -61,5 +54,3 @@ extension TodoListViewController: UITableViewDelegate {
         navigationController?.pushViewController(todoCreateVC, animated: true)
     }
 }
-
-// - @IBOutlet var todoTableView: UITableView!ってd&d以外で追加できるのか

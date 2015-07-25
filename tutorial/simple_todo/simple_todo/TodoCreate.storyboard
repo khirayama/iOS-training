@@ -8,15 +8,14 @@
         <scene sceneID="jCT-hK-Y1Q">
             <objects>
                 <viewController storyboardIdentifier="TodoCreateVC" id="fiA-M4-0bk" customClass="TodoCreateViewController" customModule="simple_todo" customModuleProvider="target" sceneMemberID="viewController">
-                    <label key="view" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vxt-9i-zSq">
+                    <textField key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="W1B-wm-v0T">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                     <connections>
-                        <outlet property="todoLabel" destination="vxt-9i-zSq" id="8at-wv-fnz"/>
+                        <outlet property="myTextField" destination="W1B-wm-v0T" id="oF7-IQ-gQ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gug-1n-Ol7" userLabel="First Responder" sceneMemberID="firstResponder"/>
