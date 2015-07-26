@@ -17,6 +17,11 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet var todoTableView: UITableView!
     let todos = ["TODO0", "TODO1", "TODO2"]
+    let todos = [
+        ["title": "TODO0", "completed": false],
+        ["title": "TODO0", "completed": false],
+        ["title": "TODO0", "completed": false]
+    ];
     
     override func viewDidLoad() {
         super.viewDidLoad()
