@@ -9,32 +9,32 @@
 import UIKit
 
 class TodoCreateViewController: UIViewController {
-    var todoModel:String!
+    var todoModel:TodoModel!
+    weak var delegate:TodoCreateViewControllerDelegate? // weakってなんだったけ
     
-    @IBOutlet var myTextField: UITextField!
+    @IBOutlet var todoTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         
-        myTextField = UITextField(frame: CGRectMake(0,0,200,30))
-        myTextField.text = todoModel
-        myTextField.delegate = self
-        myTextField.borderStyle = UITextBorderStyle.RoundedRect
-        myTextField.layer.position = CGPoint(x:self.view.bounds.width/2,y:100);
-        self.view.addSubview(myTextField)
+        todoTextField.text = todoModel.title
+        todoTextField.delegate = self
+        todoTextField.borderStyle = UITextBorderStyle.RoundedRect
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
 
+protocol TodoCreateViewControllerDelegate: class {
+    func updateTodoListTitle()
+}
+
 extension TodoCreateViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(textField: UITextField){
-        println(textField.text)
-    }
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        println(textField.text)
+        todoModel.title = textField.text
+        delegate?.updateTodoListTitle()
         return true
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {

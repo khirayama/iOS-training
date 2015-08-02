@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lwu-g1-uOx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Todo Create View Controller-->
-        <scene sceneID="jCT-hK-Y1Q">
+        <scene sceneID="0Tp-5T-D4O">
             <objects>
-                <viewController storyboardIdentifier="TodoCreateVC" id="fiA-M4-0bk" customClass="TodoCreateViewController" customModule="simple_todo" customModuleProvider="target" sceneMemberID="viewController">
-                    <textField key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="W1B-wm-v0T">
+                <viewController storyboardIdentifier="TodoCreateVC" id="Lwu-g1-uOx" customClass="TodoCreateViewController" customModule="simple_todo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BOC-NG-17j"/>
+                        <viewControllerLayoutGuide type="bottom" id="rqe-Go-5Ic"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VlK-Zy-mMo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RqC-nt-0QO">
+                                <rect key="frame" x="252" y="95" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <connections>
-                        <outlet property="myTextField" destination="W1B-wm-v0T" id="oF7-IQ-gQ9"/>
+                        <outlet property="todoTextField" destination="RqC-nt-0QO" id="WfH-UZ-x7Y"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gug-1n-Ol7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYn-No-2DZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="128"/>
+            <point key="canvasLocation" x="-312" y="-63"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA32064E1B6E2C120083D4DD /* TodoCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA32064D1B6E2C120083D4DD /* TodoCreate.storyboard */; };
 		BA81CD4F1B62755F00D2B25A /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81CD4E1B62755F00D2B25A /* TodoModel.swift */; };
 		BAC484671B61FDB300E8A437 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC484661B61FDB300E8A437 /* AppDelegate.swift */; };
 		BAC4846A1B61FDB300E8A437 /* simple_todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAC484681B61FDB300E8A437 /* simple_todo.xcdatamodeld */; };
@@ -15,7 +16,6 @@
 		BAC484741B61FDB300E8A437 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC484721B61FDB300E8A437 /* LaunchScreen.xib */; };
 		BAC484801B61FDB300E8A437 /* simple_todoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC4847F1B61FDB300E8A437 /* simple_todoTests.swift */; };
 		BAE6E91D1B620D20005FEE76 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE6E91C1B620D20005FEE76 /* TodoListViewController.swift */; };
-		BAE6E91F1B62142F005FEE76 /* TodoCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE6E91E1B62142F005FEE76 /* TodoCreate.storyboard */; };
 		BAE6E9211B621466005FEE76 /* TodoCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE6E9201B621466005FEE76 /* TodoCreateViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA32064D1B6E2C120083D4DD /* TodoCreate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodoCreate.storyboard; sourceTree = "<group>"; };
 		BA81CD4E1B62755F00D2B25A /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		BAC484611B61FDB300E8A437 /* simple_todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simple_todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC484651B61FDB300E8A437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		BAC4847E1B61FDB300E8A437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAC4847F1B61FDB300E8A437 /* simple_todoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simple_todoTests.swift; sourceTree = "<group>"; };
 		BAE6E91C1B620D20005FEE76 /* TodoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
-		BAE6E91E1B62142F005FEE76 /* TodoCreate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodoCreate.storyboard; sourceTree = "<group>"; };
 		BAE6E9201B621466005FEE76 /* TodoCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,8 +127,8 @@
 		BAC484891B61FE0000E8A437 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				BA32064D1B6E2C120083D4DD /* TodoCreate.storyboard */,
 				BAC4846D1B61FDB300E8A437 /* Main.storyboard */,
-				BAE6E91E1B62142F005FEE76 /* TodoCreate.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			files = (
 				BAC4846F1B61FDB300E8A437 /* Main.storyboard in Resources */,
 				BAC484741B61FDB300E8A437 /* LaunchScreen.xib in Resources */,
-				BAE6E91F1B62142F005FEE76 /* TodoCreate.storyboard in Resources */,
+				BA32064E1B6E2C120083D4DD /* TodoCreate.storyboard in Resources */,
 				BAC484711B61FDB300E8A437 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
